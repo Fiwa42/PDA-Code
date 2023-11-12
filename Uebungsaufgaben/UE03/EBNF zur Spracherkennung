@@ -1,0 +1,12 @@
+Anfrage = Aussage | Frage;
+Aussage = ("Ich bin in " Ort), "." | ("Es ist " Uhr), ".";
+Frage = ("Wie ist das Wetter", [" in " Ort], [" um " Uhr], "?") | ("Wie ist die Temperatur", [" in " Ort], [" um " Uhr], "?");
+SmallLetter = "a" | "b" | ... | "z";
+CapitalLetter = "A" | "B" | ... | "Z";
+Ort = CapitalLetter, {SmallLetter}
+Uhr = Number, " Uhr";
+Number = {Digit};
+Digit = "0" | "1" | "2" | ... | "9";
+
+
+
