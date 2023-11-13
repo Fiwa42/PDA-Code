@@ -1,4 +1,3 @@
-
 /*
     Bei dem Logik-Rätsel Sudoku geht es darum, ein 9 × 9 Feld mit den Ziffern von 1 bis 9 so zu füllen,
     dass
