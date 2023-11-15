@@ -64,17 +64,35 @@ public class Median {
 	}
 
 	public static double median2Dim(double[][] values) {
-        int counter = 0;
-        for (int i = 0; i < values.length; i++) {
-            counter += values.length;
-        }
-        double[] median = new double[counter];
-        for (int i = 0; i < values.length; i++) {
-            for (int j = 0; j < values.length; j++) {
-                median[i] = values[i][j];
-            }
-        }
-		return median(median);
+		int length = 0;
+		for (double[] values2 : values) {
+			length += values2.length;
+		}
+
+		if (length == 0) {
+			return 0;
+		}
+
+		int center = length / 2;
+
+		if (length % 2 == 0) {
+			return (getValueAt(values, center - 1) + getValueAt(values, center)) / 2;
+		} else {
+			return getValueAt(values, center);
+		}
 	}
 
+	private static double getValueAt(double[][] values, int pos) {
+		int index = 0;
+		
+		for (double[] values2 : values) {
+			int diff = pos - index;
+
+			if (diff < values2.length) {
+				return values2[diff];
+			}
+			index += values2.length;
+		}
+		return 0;
+	}
 }
