@@ -1,3 +1,4 @@
+package Grossuebung01;
 import java.util.Scanner;
 
 public class Temperatur {
