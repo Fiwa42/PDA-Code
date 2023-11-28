@@ -8,10 +8,29 @@ public class StarsNStripes {
 	}
 
 	private static void stars(int count) {
+		if(count == 0) {
+			return;
+		}
+		if (count % 2 == 1) {
+			System.out.print("*");
+			stripes(count - 1);
+			System.out.print("*");
+		} else {
+			stripes(count);
+		}
 	}
 
-	@SuppressWarnings("unused")
 	private static void stripes(int count) {
+		if(count == 0) {
+			return;
+		}
+		if (count % 2 == 0) {
+			System.out.print("/");
+			stars(count - 1);
+			System.out.print("/");
+		} else {
+			stars(count);
+		}
 	}
 
 }

@@ -6,7 +6,7 @@ public class Recursion {
 		System.out.println(sum(0));
 	}
 	
-	public static long sum(int number) {
+	public static int sum(int number) {
 		if(number == 0) {
 			return 0;
 		} else if (number > 0){
