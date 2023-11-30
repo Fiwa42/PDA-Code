@@ -42,7 +42,6 @@ public class Rekursion {
 
         for(int i = 0; i < test2.length; i++) {
             test2[i] = test[i] + test[i + 1];
-
         }
 
         width = maxWidth(test);
