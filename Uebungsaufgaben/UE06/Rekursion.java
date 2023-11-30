@@ -16,7 +16,6 @@ public class Rekursion {
 
         for(int i = 0; i < test2.length; i++) {
             test2[i] = test[i] + test[i + 1];
-
         }
 
         stepSum(test2);
@@ -28,45 +27,31 @@ public class Rekursion {
         System.out.println();
     }
 
-    private static void stepSumRightAlign(int[] test) {
-        int[] test2 = new int[test.length - 1];
-        int width = 0;
+    static int maxLength = 0;
 
-        if (test.length == 1) {
-            for (int m = 0; m < width; m++) {
-                System.out.print(" ");
-            }
-            System.out.println(test[0]);
+	private static void stepSumRightAlign( int[] test ) {
+		if ( test.length == 0 ){
             return;
         }
 
-        for(int i = 0; i < test2.length; i++) {
-            test2[i] = test[i] + test[i + 1];
+		String string = "" + test[0];												
+		if (maxLength < string.length()) {
+            maxLength = string.length();      
         }
 
-        width = maxWidth(test);
+		if (test.length > 1 ) {
+			int[] test2 = new int[ test.length - 1 ];
+            
+			for (int i = 1; i < test.length; i++) {
+				test2[i - 1] = test[i - 1] + test[i];
+				string = string + " " + test[i];
+			}
 
-        stepSumRightAlign(test2);
-
-        for(int k = 0; k < width; k++) {
-            System.out.print(" ");
-        }
-
-        for(int j = 0; j < test.length; j++) {
-            System.out.print(test[j] + " ");
-        }
-
-        System.out.println();
-
-        return;
-    }
-
-    private static int maxWidth(int[] test) {
-        if (test.length == 1) {
-            return 0;
-        }
-
-        int width = test.length + test.length - 1;
-        return width;
-    }
+			if (maxLength < string.length()) {
+                maxLength = string.length();
+            }	
+			stepSumRightAlign(test2);
+		}
+		System.out.println(String.format( "%" + maxLength + "s", string));
+	}
 }
