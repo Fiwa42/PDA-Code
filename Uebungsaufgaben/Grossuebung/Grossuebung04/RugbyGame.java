@@ -1,4 +1,5 @@
 public class RugbyGame {
+
 	public static void main(String[] args) {
 		RugbyGame game = new RugbyGame();
 		Player a1 = game.getTeamA().getPlayer(1);
@@ -10,10 +11,10 @@ public class RugbyGame {
 		a1.pass(a4);
 		b2.attack(a4);
 		b2.pass(b10);
-		b10.score(game.getTeamA.getGoal());
+		b10.score(game.getTeamA().getGoal());
 		game.displayScore();
 		a1.pass(a8);
-		a8.score(game.getTeamB.getGoal());
+		a8.score(game.getTeamB().getGoal());
 		game.displayScore();
 	}
 	
@@ -25,6 +26,14 @@ public class RugbyGame {
 		teamB = new Team("B");
 	}
 
+	public Team getTeamA() {
+		return teamA;
+	}
+
+	public Team getTeamB() {
+		return teamB;
+	}
+	
 	public void displayScore() {
 		System.out.println(teamA.getScore() + ":" + teamB.getScore());
 	}
