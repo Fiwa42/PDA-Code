@@ -15,6 +15,7 @@ public class StarsDatabase{
         indexOfStarId(starId, "TYC 9007-5849-1" );
         nameAndTypeOfIndex(starName, starType,2);
         starsDistanceCheck (starDistance, 12);
+        starApparentMagnitude(starApparentMagnitude);
         changeTypeOfStar(starType, 3, "White dwarf");
     }
 
@@ -65,6 +66,10 @@ public class StarsDatabase{
         }
 
         return product;
+    }
+
+    public static void starApparentMagnitude(double arrayName[]) { //so you don't get an error message above that this one isn't used
+        return;
     }
 
     //Changes the Type of a star by index to a new Type
