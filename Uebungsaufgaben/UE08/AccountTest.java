@@ -1,7 +1,7 @@
 public class AccountTest {
     public static void main(String[] args) {
-        Account donald = new Account("Donald Duck", 0);
-        Account dagobert = new Account("Dagobert Duck", 0);
+        Account donald = new Account("Donald Duck");
+        Account dagobert = new Account("Dagobert Duck");
 
         donald.deposit(100);
         donald.transfer(50,dagobert);
