@@ -12,9 +12,11 @@ public class SortedLinkedIntList {
             start = elem;
         } else {
             LinkedIntListElement current = start;
+
             while (current.getNext() != null && value > current.getNext().getValue()) {
                 current = current.getNext();
             }
+
             elem.setNext(current.getNext());
             current.setNext(elem);
         }
@@ -41,7 +43,6 @@ public class SortedLinkedIntList {
         LinkedIntListElement current = start;
         int size = 0;
 
-        // Calculate the size of the array
         while (current != null) {
             size++;
             current = current.getNext();
@@ -51,12 +52,11 @@ public class SortedLinkedIntList {
         current = start;
         int index = 0;
 
-        // Populate the array
         while (current != null) {
             array[index++] = current.getValue();
             current = current.getNext();
         }
-
+        
         return array;
     }
 }
