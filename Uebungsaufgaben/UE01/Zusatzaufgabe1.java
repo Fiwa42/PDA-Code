@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class Zusatzaufgabe {
+public class Zusatzaufgabe1 {
     public static void main(String[] args) {
         int[] values = {1, 2, 3};
         int[] reversed = reverse(values);

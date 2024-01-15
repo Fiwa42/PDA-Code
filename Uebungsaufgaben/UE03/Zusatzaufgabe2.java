@@ -1,4 +1,4 @@
-public class Zusatzaufgabe {
+public class Zusatzaufgabe2 {
     public static void main(String[] args) {
         int[] a = {3, 2, 3, 1, 4, 3};
         countingsort(a);
