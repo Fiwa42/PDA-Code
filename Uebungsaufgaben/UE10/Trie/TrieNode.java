@@ -1,3 +1,5 @@
+package Trie;
+
 public class TrieNode {
 
   private Character letter;

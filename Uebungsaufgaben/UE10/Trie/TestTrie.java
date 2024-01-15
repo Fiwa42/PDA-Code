@@ -1,3 +1,4 @@
+package Trie;
 public class TestTrie {
 
     private static final String[] KEYS = new String[] {
