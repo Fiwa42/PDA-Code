@@ -1,3 +1,5 @@
+
+
 public class IntNode {
 
 	private Integer content;

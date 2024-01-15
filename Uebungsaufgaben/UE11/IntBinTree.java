@@ -1,3 +1,5 @@
+import IntBinTree.IntNode;
+
 public class IntBinTree {
 
 	private IntNode root;

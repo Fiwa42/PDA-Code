@@ -1,3 +1,5 @@
+package IntBinTree;
+
 public class IntNode {
     private Integer content;
     private IntNode left;
