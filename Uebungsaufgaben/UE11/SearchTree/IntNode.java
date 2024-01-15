@@ -1,4 +1,4 @@
-
+package SearchTree;
 
 public class IntNode {
 

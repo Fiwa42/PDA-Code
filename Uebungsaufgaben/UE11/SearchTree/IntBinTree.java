@@ -1,3 +1,4 @@
+package SearchTree;
 import IntBinTree.IntNode;
 
 public class IntBinTree {
