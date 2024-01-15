@@ -19,9 +19,6 @@ public class Car {
         for(int i=0;i<tires.length;i++){
             tires[i]=new Tire(26,false);
         }
-
-        Motor motor = new Motor(2000);
-        Trunk trunk = new Trunk(400000);
     }
 
     //Getters & Setters
