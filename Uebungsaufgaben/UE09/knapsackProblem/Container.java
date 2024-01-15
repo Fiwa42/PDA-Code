@@ -7,8 +7,6 @@ public class Container {
     private ContainerElement current;
     private int actualWeight = -1;
 
-    private int bestValue=0;
-
     private int counter=0;
 
     public Container(){
