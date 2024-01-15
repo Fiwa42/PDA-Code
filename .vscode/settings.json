@@ -1,6 +1,5 @@
 {
     "java.project.sourcePaths": [
-        "Uebungsaufgaben/UE09/SortedList",
         "Uebungsaufgaben/UE07",
         "Uebungsaufgaben/UE06",
         "Uebungsaufgaben/UE05",
@@ -8,6 +7,8 @@
         "Uebungsaufgaben/UE03",
         "Uebungsaufgaben/UE02",
         "Uebungsaufgaben/UE01",
-        "Uebungsaufgaben/UE10"
+        "Uebungsaufgaben/UE10",
+        "Uebungsaufgaben/UE11",
+        "Uebungsaufgaben/UE09"
     ]
 }
