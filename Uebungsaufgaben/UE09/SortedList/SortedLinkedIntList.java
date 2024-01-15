@@ -1,4 +1,3 @@
-package SortedList;
 public class SortedLinkedIntList {
 
     private LinkedIntListElement start;
