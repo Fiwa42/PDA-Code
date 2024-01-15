@@ -1,5 +1,4 @@
 package SearchTree;
-import IntBinTree.IntNode;
 
 public class IntBinTree {
 
@@ -70,5 +69,5 @@ public class IntBinTree {
 		}
 		return 1 + Math.max(getLeft().getHeight(), getRight().getHeight());
 	}
-	
 }
+
