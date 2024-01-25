@@ -69,5 +69,77 @@ public class IntBinTree {
 		}
 		return 1 + Math.max(getLeft().getHeight(), getRight().getHeight());
 	}
+
+	public boolean isSearchTree() {
+		Integer[] order = this.inorder();
+		if (order == null) {
+			return true;
+		} else {
+			for (int i = 1; i < order.length; i++) {
+				if (order[i - 1] >= order[i]) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+
+	public Integer[] inorder() {
+		if ( isEmpty() )
+			return null;
+		Integer[] leftArr = new Integer[0];
+		Integer[] rightArr = new Integer[0];
+		if ( getLeft() != null )
+			leftArr = getLeft().inorder();
+		if ( getRight() != null )
+			rightArr = getRight().inorder();
+
+		Integer[] result = new Integer[leftArr.length + 1 + rightArr.length];
+		for ( int i = 0; i < leftArr.length; i++ ) {
+			result[i] = leftArr[i];
+		}
+		result[leftArr.length] = getValue();
+		for ( int i = 0; i < rightArr.length; i++ ) {
+			result[leftArr.length + 1 + i ] = rightArr[i];
+		}
+		return result;
+	}
+
+	public int checkHeight() {
+		if (isEmpty())
+			return 0;
+		int height = 0;
+		if (getLeft() != null) {
+			height = getLeft().checkHeight();
+			if (height == -1) {
+				return -1; // linker Subtree ist kein AVL-Baum
+			}
+		}
+		if (getRight() != null) {
+			int rightHeight = getRight().checkHeight();
+			if (rightHeight == -1) {
+				return -1; // rechter Subtree ist kein AVL-Baum
+			}
+			if (rightHeight > height) {
+				if ((rightHeight - height) > 1)
+					return -1; // rechter Teilbaum um mehr als 1 hoeher als linker => kein AVL-Baum
+				height = rightHeight;
+			} else {
+				if ((height - rightHeight) > 1)
+					return -1; // linker Teilbaum um mehr als 1 hoher als rechter => kein AVL-Baum
+			}
+		} else { // kein rechter Teilbaum, das heißt Hoehe links muss <= 1
+			if (height > 1) {
+				return -1; // linker Teilbaum um mehr als 1 hoeher als rechter => kein AVL-Baum
+			}
+		}
+		return height + 1;
+	}
+
+	public boolean isAVLTree() {
+		if (!this.isSearchTree())
+			return false;
+		return (this.checkHeight() >= 0);
+	}
 }
 
