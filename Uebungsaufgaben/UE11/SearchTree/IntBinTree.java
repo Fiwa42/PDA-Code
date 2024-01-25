@@ -112,25 +112,25 @@ public class IntBinTree {
 		if (getLeft() != null) {
 			height = getLeft().checkHeight();
 			if (height == -1) {
-				return -1; // linker Subtree ist kein AVL-Baum
+				return -1;
 			}
 		}
 		if (getRight() != null) {
 			int rightHeight = getRight().checkHeight();
 			if (rightHeight == -1) {
-				return -1; // rechter Subtree ist kein AVL-Baum
+				return -1;
 			}
 			if (rightHeight > height) {
 				if ((rightHeight - height) > 1)
-					return -1; // rechter Teilbaum um mehr als 1 hoeher als linker => kein AVL-Baum
+					return -1; 
 				height = rightHeight;
 			} else {
 				if ((height - rightHeight) > 1)
-					return -1; // linker Teilbaum um mehr als 1 hoher als rechter => kein AVL-Baum
+					return -1; 
 			}
-		} else { // kein rechter Teilbaum, das heißt Hoehe links muss <= 1
+		} else { 
 			if (height > 1) {
-				return -1; // linker Teilbaum um mehr als 1 hoeher als rechter => kein AVL-Baum
+				return -1;
 			}
 		}
 		return height + 1;
